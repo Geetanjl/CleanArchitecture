@@ -33,3 +33,9 @@ steps:
     command: 'test'
     projects: 'Clean.Architecture.sln'
     configuration: 'Release'
+- task: PublishBuildArtifacts@1
+  displayName: 'publish artifact'
+  inputs:
+    PathtoPublish: '$(Build.SourcesStagingDirectory)/src/Clean.Architecture.Web/bin/Debug/net6.0'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
