@@ -36,6 +36,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifact'
   inputs:
-    PathtoPublish: '$(Build.SourcesStagingDirectory)/src/Clean.Architecture.Web/bin/Debug/net6.0'
+    PathtoPublish: '$(Build.SourcesDirectory)/src/Clean.Architecture.Web/bin/Debug/net6.0'
     ArtifactName: 'drop'
     publishLocation: 'Container'
