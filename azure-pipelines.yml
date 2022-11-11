@@ -12,9 +12,6 @@ pool:
 variables:
   buildConfiguration: 'Release'
 steps:
-- task: UseDotNet@2
-  inputs:
-    version: '6.x'
 - task: NuGetCommand@2
   displayName: 'nuget restore'
   inputs:
