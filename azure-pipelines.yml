@@ -39,3 +39,10 @@ steps:
     PathtoPublish: '$(Build.SourcesDirectory)/src/Clean.Architecture.Web/bin/Debug/net6.0'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: DownloadBuildArtifacts@1
+  displayName: 'download artifacts'
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'wwwroot'
+    downloadPath: '$(System.ArtifactsDirectory)'
