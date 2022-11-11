@@ -11,23 +11,27 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+
 steps:
-- task: NuGetCommand@2
-  displayName: 'nuget restore'
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '2.x'
+
+- task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    restoreSolution: '**/*.sln'
+    projects: 'Clean.Architecture.sln'
     feedsToUse: 'select'
-    configuration: 'Release'
 - task: DotNetCoreCLI@2
   displayName: '.net build'
   inputs:
     command: 'build'
-    projects: '**/*.sln'
+    projects: 'Clean.Architecture.sln'
     configuration: 'Release'
 - task: DotNetCoreCLI@2
   displayName: '.net test'
   inputs:
     command: 'test'
-    projects: '**/*.sln'
+    projects: 'Clean.Architecture.sln'
     configuration: 'Release'
