@@ -45,4 +45,4 @@ steps:
     buildType: 'current'
     downloadType: 'single'
     artifactName: 'wwwroot'
-    downloadPath: '$(System.ArtifactsDirectory)\src\Clean.Architecture.Web\bin\Debug\net6.0'
+    downloadPath: '$(System.ArtifactsDirectory)'
